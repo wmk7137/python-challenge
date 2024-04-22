@@ -1,9 +1,13 @@
+# Import budget data
+
 import os
 import csv
 
 budget_data = os.path.join('Resources', 'budget_data.csv')
 
 print('Financial Results')
+
+# Create variables 
 
 total_months = 0
 total = 0
@@ -12,6 +16,8 @@ greatest_increase = 0
 greatest_decrease = 0
 greatest_increase_month = ""
 greatest_decrease_month = "" 
+
+# Open csv and perform data anaylsis
 
 with open(budget_data, 'r') as file_handler:
     csv_reader = csv.reader(file_handler)
@@ -37,6 +43,8 @@ with open(budget_data, 'r') as file_handler:
 
 if total_months > 1:
     average = sum(profit_changes) / len(profit_changes)
+
+# Print Results
 
 print("Total Months:", total_months)
 print("Total:", total)
